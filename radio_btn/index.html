@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.gender-group {
+    height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: sans-serif;
+}
+
+.custom-radio {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-mark {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  height: 20px;
+  width: 20px;
+  background-color: #FFFFFF1A;
+  border: 1.38px solid #0D366E;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.custom-radio input:checked ~ .radio-mark {
+  background-color: #0D366E1A;
+  ;
+}
+
+.radio-mark::after {
+  content: "✔";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #0D366E;
+}
+.custom-radio input:checked ~ .radio-mark::after {
+  display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="gender-group">
+        <label class="custom-radio">
+          <input type="radio" name="gender" value="male" checked />
+          <span class="radio-mark"></span>
+          Male
+        </label>
+      
+        <label class="custom-radio">
+          <input type="radio" name="gender" value="female" />
+          <span class="radio-mark"></span>
+          Female
+        </label>
+      
+        <label class="custom-radio">
+          <input type="radio" name="gender" value="other" />
+          <span class="radio-mark"></span>
+          Other
+        </label>
+      </div>
+</body>
+</html>
